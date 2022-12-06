@@ -5,8 +5,8 @@
         static void Main(string[] args)
         {
             var caloriesPerElf = File.ReadAllText("input.txt")
-                .Split("\n\n")
-                .Select(x => x.Split("\n").Select(int.Parse));
+                .Split(new string[] { Environment.NewLine + Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(x => x.Split(Environment.NewLine).Select(int.Parse));
             
             Console.WriteLine(PartOne(caloriesPerElf));
             Console.WriteLine(PartTwo(caloriesPerElf));

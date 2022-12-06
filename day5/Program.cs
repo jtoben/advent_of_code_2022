@@ -10,7 +10,7 @@
             var stacks = GetStacksFromInput(input[0]);
             var instructions = input[1]
                 .Split(Environment.NewLine)
-                .Select(x => Instruction.FromString(x));
+                .Select(Instruction.FromString);
 
             Console.WriteLine(PartOne(CreateCopy(stacks), instructions));
             Console.WriteLine(PartTwo(CreateCopy(stacks), instructions));
